@@ -11,12 +11,13 @@
 <body>
   <h1>회원가입 양식</h1>
   <form action="">
+    <!--lable에 for를 주게되면, label에 쌓여있는 텍스트(이메일)를 선택해도 선택된다.-->
     <label for="e-mail">
       이메일
     </label>
     <input type="email" id="e-mail">
     <br />
-    
+
     <label for="user-passwd">
       패스워드
     </label>
@@ -28,6 +29,14 @@
     </label>
     <input type="password" id="user-passwd2">
     <br />
+    <!--name 속성을 같은 값을 radio type에 설정해두면, 둘 중 하나만 선택가능-->
+    <label for="gender-man">남자</label>
+    <input type="radio" name="gender" value="남자" id="gender-man">
+    <label for="gender-woman">여자</label>
+    <input type="radio" name="gender" value="남자" id="gender-woman">
+    <br />
+
+    <input type="button" value="확인" />
 
   </form>
 </body>
