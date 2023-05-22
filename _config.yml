@@ -1,0 +1,28 @@
+title: JinyDev
+email: infohojin@naver.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Jiny Study.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://html.jiny.dev" # the base hostname & protocol for your site, e.g. http://example.com
+
+twitter_username: infohojin
+github_username:  infohojin
+
+source: src
+destination: docs
+
+layout:
+  bgcolor: "#c8e6c9"
+  width: "1200px"
+
+sass:
+  load_paths:
+    - _scss
+    - ../node_modules/bootstrap/scss
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+include:
+  - _includes

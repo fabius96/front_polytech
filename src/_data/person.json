@@ -1,0 +1,12 @@
+{
+    "posts": [
+      {
+        "title": "First Post",
+        "author": "John Doe"
+      },
+      {
+        "title": "Second Post",
+        "author": "Jane Smith"
+      }
+    ]
+  }
