@@ -87,3 +87,7 @@ footer {
   background-color: #00857E;
   text-shadow :none;
 }
+
+.fa-container {
+  text-align: center;
+}
