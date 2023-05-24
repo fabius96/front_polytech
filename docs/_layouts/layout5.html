@@ -1,0 +1,79 @@
+---
+layout: bootstrap
+---
+
+<style>
+    #header-wrap {
+        width: 100%; 
+        background-color: #8d6e63; 
+    }
+    #nav-wrap {
+        width: 100%; 
+        background-color: #a1887f;
+    }
+    #content-wrap {
+        width: 100%; 
+        background-color: #bcaaa4;
+        flex-grow: 1;
+    }
+    #footer-wrap {
+        width: 100%; 
+        background-color: #d7ccc8;
+    }
+
+    .header-container {
+        width: 1000px; 
+        margin: 0 auto; 
+        height: 100px; 
+        background-color: #3e2723;
+    }
+    .nav-container {
+        width: 1000px; 
+        margin: 0 auto; 
+        height: 100px; 
+        background-color: #4e342e;
+    }
+    .content-container {
+        width: 1000px; 
+        margin: 0 auto; 
+        height: 100%; 
+        background-color: #5d4037;
+    }
+    .footer-container {
+        width: 1000px; 
+        margin: 0 auto; 
+        height: 100px; 
+        background-color: #6d4c41;
+    }
+
+    #layout {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+</style>
+
+<div id="layout">
+    <div id="header-wrap">
+        <div class="header-container">
+            {% include header.html %}
+        </div>
+    </div>
+    <div id="nav-wrap">
+        <div class="nav-container">
+            {% include nav.html %} 
+        </div>
+    </div>
+    <div id="content-wrap">
+        <div class="content-container">
+            {{content}}
+        </div>
+    </div>
+    <div id="footer-wrap">
+        <div class="footer-container">
+            {% include footer.html %} 
+        </div>
+    </div>
+</div>
+
+

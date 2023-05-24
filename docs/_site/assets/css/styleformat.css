@@ -1,0 +1,89 @@
+/* 하나금융그룹 폰트 */
+@font-face {
+  font-family: Hana2-Light;
+  src: url('../font/Hana2.0_TTF/Hana2-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Hana2-Regular;
+  src: url('../font/Hana2.0_TTF/Hana2-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Hana2-Medium;
+  src: url('../font/Hana2.0_TTF/Hana2-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Hana2-Bold;
+  src: url('../font/Hana2.0_TTF/Hana2-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Hana2-Heavy;
+  src: url('../font/Hana2.0_TTF/Hana2-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  /* body 기본 서체 Hana2-Bold*/
+  font-family: 'Hana2-Bold';
+}
+
+header {
+  background-color: transparent;
+  height: 60px;
+}
+
+footer {
+  background-color: lightgray;
+  height: 50px;
+}
+
+/* hover하여도 색상 변화가 없도록 */
+.btn-primary:hover,
+.btn-primary.navbar-btn:hover {
+  background-color: #00857E;
+}
+
+/* '시작하기'버튼을 이전에 클릭해보았더라도, 윤곽선이 남지 않게 */
+.btn-primary,
+.btn-primary.navbar-btn:active,
+.btn-primary.navbar-btn:focus {
+  border-color: transparent !important;
+}
+
+
+.navbar-logo-img {
+  width: 40px;
+}
+
+.navbar-btn {
+  background-color: #00857E;
+}
+
+
+.background-image-container {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 12% 0;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+}
+
+
+.btn-primary {
+  background-color: #00857E;
+  text-shadow :none;
+}
