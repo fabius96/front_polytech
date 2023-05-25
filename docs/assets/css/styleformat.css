@@ -56,6 +56,10 @@ footer {
 
 }
 
+a {
+  text-decoration: none; /* 링크의 밑줄 제거 */
+}
+
 /* hover하여도 색상 변화가 없도록 */
 .btn-primary:hover,
 .btn-primary.navbar-btn:hover {
@@ -81,7 +85,6 @@ footer {
   background-color: #00857E;
 }
 
-
 .background-image-container {
   position: relative;
   background-size: cover;
@@ -91,7 +94,6 @@ footer {
   color: white;
   text-shadow: 0 1px 3px #000;
 }
-
 
 .btn-primary {
   background-color: #00857E;
@@ -148,4 +150,9 @@ background : linear-gradient(#FFFFFF, #73c0bc);
 
 .highlight-red {
   color: #FF1A5C;
+}
+
+.fontawsome{
+  font-size: 18px;
+  color: #000000;
 }

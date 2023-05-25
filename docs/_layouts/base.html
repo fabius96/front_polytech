@@ -16,15 +16,17 @@
 <body>
   <header>
     <!--flex 레이아웃 구현부-->
-    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between  px-5">
-      <a class="navbar-brand" href="/">
-        <img src="./assets/img/hana.svg" class="navbar-logo-img" alt="">
-        하나원모임
-      </a>
-      <a href="/" class="btn btn-primary navbar-btn" title="">시작하기</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="./assets/img/hana.svg" class="navbar-logo-img" alt="">
+          하나원모임
+        </a>
+        <a href="/" class="btn btn-primary navbar-btn" title="">시작하기</a>
+      </div>
     </nav>
   </header>
-
+  
   {{content}}
 
   <footer>
@@ -33,11 +35,21 @@
         <img src="../assets/img/hana.svg" class="navbar-logo-img" alt="하나금융그룹 로고">
       </a>
       <div>
+        <p>COPYRIGHT | ⓒ 2023 Jaeyoung Kim. All rights Reserved.</p>
         <p>
-          <span>서울특별시 중구 을지로 66</span>
-          <span>02.2002.1110</span>
+          <span>
+            CONTACT&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href= "mailto:jy0511_@naver.com" >
+              <i class="fa-solid fa-envelope fontawsome"></i>
+            </a>
+          </span>
+          &nbsp;
+          <span>
+            <a href="https://github.com/fabius96/front_polytech">
+              <i class="fa-brands fa-github fontawsome"></i>
+            </a>
+          </span>
         </p>
-        <p>Copyright ⓒ 2022 HANA FINANCIAL GROUP. All rights Reserved.</p>
       </div>
     </div>
   </footer>
