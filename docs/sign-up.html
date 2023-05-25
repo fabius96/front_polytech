@@ -1,0 +1,56 @@
+---
+layout : base
+---
+
+<!-- Page content -->
+<div class="container sign-up">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-lg-5 col-md-8">
+      <!-- Card -->
+      <div class="card shadow">
+        <!-- Card body -->
+        <div class="card-body p-4">
+          <div class="mb-4">
+            <p class="login-character-text">
+              <img src="./assets/img/별순이.png" class="login-character-img" alt="">
+              하나
+              <span class="highlight-red">원</span>모임
+            </p>
+            <span>이미 회원이신가요? <a href="login.html" class="ms-1">시작하기</a></span>
+          </div>
+          <!-- Form -->
+          <form>
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="username" class="form-label">아이디 입력</label>
+              <input type="text" id="username" class="form-control" name="username" placeholder="hanaone" required />
+            </div>
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">비밀번호 입력</label>
+              <input type="password" id="password" class="form-control" name="password" placeholder="**********"
+                required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">비밀번호 확인</label>
+              <input type="password" id="password" class="form-control" name="password" placeholder="**********"
+                required />
+            </div>
+              <!-- Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary" onclick="sorryAlert()">회원가입</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function sorryAlert() {
+    alert("아직 구현되지 않은 기능입니다.")
+  }
+</script>
