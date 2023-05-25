@@ -53,7 +53,6 @@ header {
 
 footer {
   background-color: #f1fffe;
-
 }
 
 a {
@@ -163,4 +162,23 @@ a {
 .fontawsome {
   font-size: 18px;
   color: #000000;
+}
+
+/* 로그인, 회원가입 */
+.sign-in{
+  font-size: 13px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.login-character-text{
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Hana2-Bold';
+  color: #00857E;
+  margin-right: 50px;
+}
+
+.login-character-img{
+  width: 80px;
 }

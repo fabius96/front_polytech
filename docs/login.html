@@ -1,0 +1,60 @@
+---
+layout : base
+---
+
+<div class="container sign-in">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-lg-5 col-md-8 py-5 py-md-0">
+      <!-- Card -->
+      <div class="card">
+        <!-- Card body -->
+        <div class="card-body p-4">
+          <div class="mb-4">
+            <p class="login-character-text">
+              <img src="./assets/img/별돌이.png" class="login-character-img" alt="">
+              하나
+              <span class="highlight-red">원</span>모임
+            </p>
+            <span>회원이 아니신가요? <a href="sign-up.html" class="ms-1">회원가입</a></span>
+          </div>
+          <!-- Form -->
+          <form>
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="email" class="form-label">아이디 입력</label>
+              <input type="email" id="email" class="form-control" name="email" placeholder="hanaone" required>
+            </div>
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">비밀번호 입력</label>
+              <input type="password" id="password" class="form-control" name="password" placeholder="**************"
+                required>
+            </div>
+            <!-- Checkbox -->
+            <div class="d-lg-flex justify-content-between align-items-center mb-4">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberme">
+                <label class="form-check-label" for="rememberme">아이디 저장</label>
+              </div>
+              <div>
+                <a onclick="sorryAlert()" style="color:blue">비밀번호 찾기</a>
+              </div>
+            </div>
+            <div>
+              <!-- Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary" onclick="sorryAlert()">로그인</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function sorryAlert() {
+    alert("아직 구현되지 않은 기능입니다.")
+  }
+</script>
