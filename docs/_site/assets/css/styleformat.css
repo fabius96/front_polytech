@@ -110,7 +110,7 @@ footer {
 }
 
 .col-md-4{
-  padding-top: 50px;
+  padding-top: 80px;
 }
 
 .list-img{
@@ -130,13 +130,14 @@ footer {
 background : linear-gradient(#FFFFFF, #73c0bc);
   text-align: center;
   font-family: 'Hana2-Bold';
+  padding-top: 100px;
 }
 
 .hana-hand{
   display: block;
   margin: auto;
-  width: 50%; /* 화면 크기에 따라 이미지 크기가 동적으로 조정되게 합니다 */
-  max-width: 800px; /* 이미지가 이 크기 이상으로 커지지 않게 합니다. 필요에 따라 값 변경 */
+  width: 90%; /* 화면 크기에 따라 이미지 크기가 동적으로 조정되게 합니다 */
+  max-width: 1200px; /* 이미지가 이 크기 이상으로 커지지 않게 합니다. 필요에 따라 값 변경 */
   height: auto; /* 높이는 자동으로 조정해서 비율 유지 */
   padding-top: 20px;
 }
