@@ -34,6 +34,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: Hana2-CM;
+  src: url('../font/Hana2.0_TTF/Hana2-CM.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   /* body 기본 서체 Hana2-Medium*/
   font-family: 'Hana2-Medium';
@@ -46,6 +53,7 @@ header {
 
 footer {
   background-color: #f1fffe;
+
 }
 
 /* hover하여도 색상 변화가 없도록 */
@@ -105,11 +113,35 @@ footer {
   padding-top: 50px;
 }
 
+.list-img{
+  width: 80px;
+}
+
 .inner {
   font-family: Hana2-Regular;
   font-size: small;
   display: flex;
   justify-content: center;
-  gap: 20px; /* 아이템 사이의 공간. 필요에 따라 이 값을 조정하세요. */
+  gap: 20px;
   padding: 20px;
+}
+
+.hana-phone-div{
+background : linear-gradient(#FFFFFF, #73c0bc);
+  text-align: center;
+  font-family: 'Hana2-Bold';
+}
+
+.hana-hand{
+  display: block;
+  margin: auto;
+  height: auto; /* 높이는 자동으로 조정해서 비율 유지 */
+  padding-top: 20px;
+}
+
+.highlight {
+  color: #00857E;
+}
+.highlight-red {
+  color: #FF1A5C;
 }
