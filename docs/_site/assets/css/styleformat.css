@@ -53,11 +53,26 @@ header {
 
 footer {
   background-color: #f1fffe;
+  flex-shrink: 0;
 }
 
 a {
   text-decoration: none;
   /* 링크의 밑줄 제거 */
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.reduce-space {
+  min-height: 6vh; /* 기존의 100vh에서 80vh로 변경 */
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 /* hover하여도 색상 변화가 없도록 */
@@ -166,13 +181,12 @@ a {
 
 /* 로그인, 회원가입 */
 .sign-in,
-.sign-up{
+.sign-up {
   font-size: 13px;
   margin-top: 100px;
-  margin-bottom: 100px;
 }
 
-.login-character-text{
+.login-character-text {
   font-size: 30px;
   text-align: center;
   font-family: 'Hana2-Bold';
@@ -180,6 +194,6 @@ a {
   margin-right: 50px;
 }
 
-.login-character-img{
+.login-character-img {
   width: 80px;
 }

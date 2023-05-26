@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMm6N0%2FbtshkxV03B5%2FnnG2xQ9Na4H7caKF6q9AW1%2Fimg.png">
+  <meta property="og:image"
+    content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMm6N0%2FbtshkxV03B5%2FnnG2xQ9Na4H7caKF6q9AW1%2Fimg.png">
   <meta property="og:description" content="하나원모임을 통해 연인, 가족, 친구들과 새로운 추억을 만들어보세요.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,22 +16,24 @@
   <link href="../assets/css/styleformat.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/f87e59f65d.js" crossorigin="anonymous"></script>
 </head>
+<div class="flex-container">
+  <div class="content">
 
-<body>
-  <header>
-    <!--flex 레이아웃 구현부-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="./assets/img/hana.svg" class="navbar-logo-img" alt="">
-          하나원모임
-        </a>
-        <a href="./login.html" class="btn btn-primary navbar-btn" title="">시작하기</a>
-      </div>
-    </nav>
-  </header>
+    <body>
+      <header>
+        <!--flex 레이아웃 구현부-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/">
+              <img src="./assets/img/hana.svg" class="navbar-logo-img" alt="">
+              하나원모임
+            </a>
+            <a href="./login.html" class="btn btn-primary navbar-btn" title="">시작하기</a>
+          </div>
+        </nav>
+      </header>
 
-  <div class="container sign-in">
+      <div class=" container sign-in">
   <div class="row align-items-center justify-content-center">
     <div class="col-lg-5 col-md-8 py-5 py-md-0">
       <!-- Card -->
@@ -49,8 +52,8 @@
           <form>
             <!-- Username -->
             <div class="mb-3">
-              <label for="email" class="form-label">아이디 입력</label>
-              <input type="email" id="email" class="form-control" name="email" placeholder="Byeoldoli" required>
+              <label for="username" class="form-label">아이디 입력</label>
+              <input type="text" id="username" class="form-control" name="username" placeholder="Byeoldoli" required>
             </div>
             <!-- Password -->
             <div class="mb-3">
@@ -71,7 +74,8 @@
             <div>
               <!-- Button -->
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary" onclick="sorryAlert()">로그인</button>
+                <button type="submit" class="btn btn-primary">로그인</button>
+                <!-- <button type="submit" class="btn btn-primary" onclick="sorryAlert()">로그인</button> -->
               </div>
             </div>
           </form>
@@ -85,8 +89,30 @@
   function sorryAlert() {
     alert("아직 구현되지 않은 기능입니다.")
   }
-</script>
+  
+  var form = document.querySelector('form');
 
+  form.addEventListener('submit', function(event) {
+    // 폼 데이터를 자동으로 보내는 것을 막습니다.
+    event.preventDefault();
+
+    // 아이디와 비밀번호를 미리 설정합니다.
+    var correctEmail = 'Byeoldoli';
+    var correctPassword = 'password123';
+
+    // 사용자가 입력한 아이디와 비밀번호를 가져옵니다.
+    var inputEmail = document.getElementById('username').value;
+    var inputPassword = document.getElementById('password').value;
+
+    // 아이디와 비밀번호를 확인합니다.
+    if (inputEmail === correctEmail && inputPassword === correctPassword) {
+      alert('Login successful');
+    } else {
+      alert('Login failed');
+    }
+  });
+</script>
+  </div>
   <footer>
     <div class="inner d-flex">
       <a href="/" class="logo" title="홈으로" aria-label="홈으로">
@@ -111,7 +137,7 @@
       </div>
     </div>
   </footer>
-
+</div>
 
 </body>
 

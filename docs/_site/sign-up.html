@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMm6N0%2FbtshkxV03B5%2FnnG2xQ9Na4H7caKF6q9AW1%2Fimg.png">
+  <meta property="og:image"
+    content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMm6N0%2FbtshkxV03B5%2FnnG2xQ9Na4H7caKF6q9AW1%2Fimg.png">
   <meta property="og:description" content="하나원모임을 통해 연인, 가족, 친구들과 새로운 추억을 만들어보세요.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,29 +16,31 @@
   <link href="../assets/css/styleformat.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/f87e59f65d.js" crossorigin="anonymous"></script>
 </head>
+<div class="flex-container">
+  <div class="content">
 
-<body>
-  <header>
-    <!--flex 레이아웃 구현부-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="./assets/img/hana.svg" class="navbar-logo-img" alt="">
-          하나원모임
-        </a>
-        <a href="./login.html" class="btn btn-primary navbar-btn" title="">시작하기</a>
-      </div>
-    </nav>
-  </header>
+    <body>
+      <header>
+        <!--flex 레이아웃 구현부-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/">
+              <img src="./assets/img/hana.svg" class="navbar-logo-img" alt="">
+              하나원모임
+            </a>
+            <a href="./login.html" class="btn btn-primary navbar-btn" title="">시작하기</a>
+          </div>
+        </nav>
+      </header>
 
-  <!-- Page content -->
+      <!-- Page content -->
 <div class="container sign-up">
   <div class="row align-items-center justify-content-center">
     <div class="col-lg-5 col-md-8">
       <!-- Card -->
       <div class="card shadow">
         <!-- Card body -->
-        <div class="card-body p-4">
+        <div class="card-body p-3">
           <div class="mb-4">
             <p class="login-character-text">
               <img src="./assets/img/별순이.png" class="login-character-img" alt="">
@@ -64,17 +67,17 @@
               <input type="password" id="password" class="form-control" name="password" placeholder="**********"
                 required />
             </div>
-              <!-- Button -->
-              <div class="d-grid">
-                <button type="submit" class="btn btn-primary" onclick="sorryAlert()">회원가입</button>
-              </div>
+            <!-- Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary" onclick="sorryAlert()">회원가입</button>
             </div>
-          </form>
         </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <script>
@@ -82,7 +85,7 @@
     alert("아직 구현되지 않은 기능입니다.")
   }
 </script>
-
+  </div>
   <footer>
     <div class="inner d-flex">
       <a href="/" class="logo" title="홈으로" aria-label="홈으로">
@@ -107,7 +110,7 @@
       </div>
     </div>
   </footer>
-
+</div>
 
 </body>
 
