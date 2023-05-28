@@ -41,6 +41,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 오뮤_다예쁨체;
+  src: url('../assets/font/Hana2.0_TTF/오뮤_다예쁨체.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   /* body 기본 서체 Hana2-Medium*/
   font-family: 'Hana2-Medium';
@@ -68,7 +75,7 @@ a {
 }
 
 .reduce-space {
-  min-height: 6vh; 
+  min-height: 6vh;
 }
 
 .content {
@@ -197,3 +204,56 @@ a {
 .login-character-img {
   width: 80px;
 }
+
+/* 로그인 후 메인페이지(index.html) */
+.bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+  font-family: '오뮤_다예쁨체';
+}
+
+.speech-bubble {
+  padding: 15px;
+  width: 400px;
+  max-width: 400px;
+  position: relative;
+  background: #00857E;
+  border-radius: .4em;
+}
+
+@media screen and (max-width: 768px) {
+  .speech-bubble {
+    width: 80%;
+  }
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #00857E;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+
+.login-charater {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.login-charater img {
+  width: 250px;
+}
+

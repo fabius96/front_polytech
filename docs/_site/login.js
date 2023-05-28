@@ -29,11 +29,10 @@ fetch('users.json')
 
       // 사용자가 존재하면 로그인 성공 메시지를 표시하고 index.html로 이동
       if (userExists) {
-        alert('로그인 성공');
-        window.location.href = 'index.html'; // 로그인 성공시 index.html로 이동
+        window.location.href = 'logined-index.html'; // 로그인 성공시 logined-index.html로 이동
       } else {
         // 그렇지 않으면 로그인 실패 메시지를 표시하고 아이디와 비밀번호 필드를 초기화
-        alert('로그인 실패');
+        alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
         document.getElementById('username').value = ''; // 로그인 실패시 아이디 입력 필드 초기화
         document.getElementById('password').value = ''; // 로그인 실패시 비밀번호 입력 필드 초기화
       }
