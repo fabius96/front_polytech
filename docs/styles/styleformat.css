@@ -206,6 +206,24 @@ a {
 }
 
 /* 로그인 후 메인페이지(index.html) */
+/* 잔액 영역 (자체 css 코드)*/
+.balance-container {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 800px;
+  /* 박스의 최대 너비를 400px에서 800px로 변경 */
+}
+
+#balanceTitle {
+  font-family: 'Hana2-Medium', sans-serif;
+  /* 이 부분에 원하시는 폰트를 설정하실 수 있습니다 */
+}
+
+
+
+
 .bubble {
   display: flex;
   justify-content: center;
@@ -250,9 +268,11 @@ a {
   }
 
   .chart canvas {
-    padding-top : 30px;
-    width: 400px !important; /* 모바일 환경에서 차트의 크기를 줄임 */
-    height: 400px !important; /* 모바일 환경에서 차트의 크기를 줄임 */
+    padding-top: 30px;
+    width: 400px !important;
+    /* 모바일 환경에서 차트의 크기를 줄임 */
+    height: 400px !important;
+    /* 모바일 환경에서 차트의 크기를 줄임 */
   }
 }
 
@@ -321,4 +341,40 @@ a {
 
 .card-mainpage .btn-primary {
   color: #fff;
+}
+
+/* 로그인 후 입출금 내역 페이지 */
+.table-container {
+  padding-top: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  word-wrap: break-word;
+  /* Allows the words to break and go to next line */
+}
+
+/* Responsive layout - makes the menu and the content area stack on top of each other */
+@media (max-width: 600px) {
+
+  td,
+  th {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+.deposit {
+  color: blue;
+}
+
+.withdrawal {
+  color: red;
 }

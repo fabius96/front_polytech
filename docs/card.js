@@ -1,3 +1,11 @@
+// on-click event
+window.onload = function() {
+  document.getElementById('detailsButton').addEventListener('click', function() {
+    window.location.href = 'logined-transactions.html';
+  });
+};
+
+
 // 'data.json' 파일에서 데이터 불러오기
 fetch('card.json')
   .then(response => response.json()) // 응답을 JSON으로 파싱

@@ -34,42 +34,24 @@
 </nav>
       </header>
 
-      <div class="container balance-container align-items-center justify-content-center">
-  <div id="balanceDisplay" class="balance-display bg-light shadow rounded p-4 text-center">
-    <h2 id="balanceTitle">계좌잔고 : 0원</h2> <!-- This "현재 잔고" part can be replaced with your desired wording -->
-    <div class="balance-buttons mt-4 d-flex justify-content-between">
-      <button id="detailsButton" class="btn btn-primary">상세조회</button>
-      <button id="transferButton" class="btn btn-secondary">이체</button>
-    </div>
-  </div>
+      <div class="container table-container">
+  <table id="transactionTable" class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">날짜</th>
+        <th scope="col">내역</th>
+        <th scope="col">분류</th>
+        <th scope="col">입금액</th>
+        <th scope="col">출금액</th>
+        <th scope="col">잔액</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 </div>
+<script src="transactions.js"></script>
 
-
-
-
-
-
-  <div class="bubble">
-    <div id="characterBubble" class="content-row">
-      <div class="character-bubble">
-        <div class="speech-bubble">
-          <h2>이번 달 지출 내역을 안내드립니다.</h2>
-          <h3>지출 내역을 확인하시고 맞춤형 혜택을 선택해보세요!</h3>
-        </div>
-        <div class="login-charater">
-          <img src="./assets/img/별돌이2.png">
-        </div>
-      </div>
-      <div class="chart"> <canvas id="donutChart" width="400" height="400"></canvas></div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
-  </div>
-
-  <div class="card-container"></div>
-
-  <script src="card.js"></script>
-  <script src="logined-main-balance.js"></script>
   </div>
   <footer>
     <div class="inner d-flex">

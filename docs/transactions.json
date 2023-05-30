@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2023-05-16",
+    "description": "하나로마트 가평 중앙점",
+    "category" : "마트",
+    "deposit": 0,
+    "withdrawal": 348900
+  },
+  {
+    "date": "2023-05-16",
+    "description": "가평 스카이 팬션",
+    "category" : "숙박",
+    "deposit": 0,
+    "withdrawal": 120000
+  },
+  {
+    "date": "2023-05-16",
+    "description": "알뜰 주유소 천안점",
+    "category" : "주유비",
+    "deposit": 0,
+    "withdrawal": 132900
+  },
+  {
+    "date": "2023-05-15",
+    "description": "빕스",
+    "category" : "외식",
+    "deposit": 0,
+    "withdrawal": 200000
+  },
+  {
+    "date": "2023-05-15",
+    "description": "신라호텔",
+    "category" : "숙박",
+    "deposit": 0,
+    "withdrawal": 300000
+  },
+  {
+    "date": "2023-05-01",
+    "description": "5월 모임비 입금",
+    "category" : "입금",
+    "deposit": 5000000,
+    "withdrawal": 0
+  }
+]
