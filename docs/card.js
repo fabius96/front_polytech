@@ -7,7 +7,7 @@ fetch('card.json')
     // 각 항목에 대해
     data.forEach(item => {
       const card = document.createElement('div'); // 새로운 div 요소 생성
-      card.classList.add('card'); // 생성된 div 요소에 'card' 클래스 추가
+      card.classList.add('card-mainpage'); // 생성된 div 요소에 'card-mainpage' 클래스 추가
       
       // 카드 내용 채우기
       card.innerHTML = `

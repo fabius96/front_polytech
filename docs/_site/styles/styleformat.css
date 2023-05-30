@@ -240,13 +240,19 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .speech-bubble{
+  .speech-bubble {
     width: 80%;
   }
 
   .content-row {
     flex-direction: column;
     /* 모바일 화면에서는 행 방향으로 변경 */
+  }
+
+  .chart canvas {
+    padding-top : 30px;
+    width: 400px !important; /* 모바일 환경에서 차트의 크기를 줄임 */
+    height: 400px !important; /* 모바일 환경에서 차트의 크기를 줄임 */
   }
 }
 
@@ -273,6 +279,7 @@ a {
   width: 250px;
 }
 
+
 /* 로그인 후 메인페이지 카드 영역 */
 .card-container {
   padding-top: 50px;
@@ -290,28 +297,28 @@ a {
   }
 }
 
-.card {
+.card-mainpage {
   width: 18rem;
 }
 
-.card .card-img-top {
+.card-mainpage .card-img-top {
   width: 100%;
   height: auto;
 }
 
-.card .card-body {
+.card-mainpage .card-body {
   padding: 15px;
 }
 
-.card .card-title {
+.card-mainpage .card-title {
   margin-bottom: 10px;
   font-size: 1.25rem;
 }
 
-.card .card-text {
+.card-mainpage .card-text {
   margin-bottom: 15px;
 }
 
-.card .btn-primary {
+.card-mainpage .btn-primary {
   color: #fff;
 }
