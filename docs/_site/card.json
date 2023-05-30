@@ -1,0 +1,20 @@
+[
+  {
+    "image": "./assets/img/hotel.jpg",
+    "title": "숙박 집중 할인형",
+    "description": "숙박 5% 적립을 비롯한 6개 영역 총합 17% 할인 및 관련 할인 쿠폰 제공",
+    "button": "혜택 변경하기"
+  },
+  {
+    "image": "./assets/img/train.jpg",
+    "title": "교통 집중 할인형",
+    "description": "교통 5% 적립을 비롯한 6개 영역 총합 17% 할인 및 관련 할인 쿠폰 제공",
+    "button": "혜택 변경하기"
+  },
+  {
+    "image": "./assets/img/resturant.jpg",
+    "title": "외식 집중 할인형",
+    "description": "외식 5% 적립을 비롯한 6개 영역 총합 17% 할인 및 관련 할인 쿠폰 제공",
+    "button": "혜택 변경하기"
+  }
+]

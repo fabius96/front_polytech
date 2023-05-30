@@ -15,6 +15,7 @@
 
   <link href="../styles/styleformat.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/f87e59f65d.js" crossorigin="anonymous"></script>
+
 </head>
 <div class="flex-container">
   <div class="content">
@@ -34,14 +35,24 @@
       </header>
 
       <div class="bubble">
-  <div class="speech-bubble">
-    <h2>어떤 모임을 계획하고 있으신가요?</h2>
-    <h3>당신의 이야기를 들려주세요!</h3>
+  <div class="content-row">
+    <div class="character-bubble">
+      <div class="speech-bubble">
+        <h2>이번 달 지출 내역을 안내드립니다.</h2>
+        <h3>지출 내역을 확인하시고 맞춤형 혜택을 선택해보세요!</h3>
+      </div>
+      <div class="login-charater">
+        <img src="./assets/img/별돌이2.png">
+      </div>
+    </div>
+    <div class="chart"> <canvas id="donutChart" width="400" height="400"></canvas></div>
   </div>
-  <div class="login-charater">
-    <img src="./assets/img/별돌이2.png">
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </div>
+
+<div class="card-container"></div>
+<script src="card.js"></script>
   </div>
   <footer>
     <div class="inner d-flex">

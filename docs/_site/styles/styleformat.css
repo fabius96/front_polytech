@@ -208,18 +208,31 @@ a {
 /* 로그인 후 메인페이지(index.html) */
 .bubble {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 30px;
   color: white;
   text-shadow: 0 1px 3px #000;
   font-family: '오뮤_다예쁨체';
 }
 
+.content-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.character-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .speech-bubble {
   padding: 15px;
-  width: 400px;
+  width: 4500px;
   max-width: 400px;
   position: relative;
   background: #00857E;
@@ -227,8 +240,13 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .speech-bubble {
+  .speech-bubble{
     width: 80%;
+  }
+
+  .content-row {
+    flex-direction: column;
+    /* 모바일 화면에서는 행 방향으로 변경 */
   }
 }
 
@@ -248,8 +266,6 @@ a {
 }
 
 .login-charater {
-  display: flex;
-  justify-content: center;
   margin-top: 20px;
 }
 
@@ -257,3 +273,45 @@ a {
   width: 250px;
 }
 
+/* 로그인 후 메인페이지 카드 영역 */
+.card-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card {
+  width: 18rem;
+}
+
+.card .card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card .card-body {
+  padding: 15px;
+}
+
+.card .card-title {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.card .card-text {
+  margin-bottom: 15px;
+}
+
+.card .btn-primary {
+  color: #fff;
+}
