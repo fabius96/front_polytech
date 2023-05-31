@@ -1,6 +1,6 @@
 // on-click event
-window.onload = function() {
-  document.getElementById('detailsButton').addEventListener('click', function() {
+window.onload = function () {
+  document.getElementById('detailsButton').addEventListener('click', function () {
     window.location.href = 'logined-transactions.html';
   });
 };
@@ -10,13 +10,16 @@ window.onload = function() {
 fetch('card.json')
   .then(response => response.json()) // 응답을 JSON으로 파싱
   .then(data => {
-    const cardContainer = document.querySelector('.card-container'); // 카드 컨테이너 선택
+    // 카드 컨테이너 선택
+    const cardContainer = document.querySelector('.card-container');
 
     // 각 항목에 대해
     data.forEach(item => {
-      const card = document.createElement('div'); // 새로운 div 요소 생성
-      card.classList.add('card-mainpage'); // 생성된 div 요소에 'card-mainpage' 클래스 추가
-      
+      // 새로운 div 요소 생성
+      const card = document.createElement('div');
+      // 생성된 div 요소에 'card-mainpage' 클래스 추가
+      card.classList.add('card-mainpage');
+
       // 카드 내용 채우기
       card.innerHTML = `
         <img src="${item.image}" class="card-img-top" alt="...">
@@ -28,9 +31,11 @@ fetch('card.json')
       `;
 
       // '혜택 변경하기' 버튼에 클릭 이벤트 리스너 추가
-      card.querySelector('.btn').addEventListener('click', function(event) {
-        event.preventDefault(); // 링크의 기본 동작 방지
-        alert('아직 구현되지 않은 기능입니다.'); // 경고 메시지 표시
+      card.querySelector('.btn').addEventListener('click', function (event) {
+        // 링크의 기본 동작 방지
+        event.preventDefault();
+        // 경고 메시지 표시
+        alert('아직 구현되지 않은 기능입니다.');
       });
 
       // 생성된 카드를 카드 컨테이너에 추가

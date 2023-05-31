@@ -18,7 +18,9 @@ request.onload = function () {
 
   // 읽어들인 JSON 데이터를 바탕으로 새로운 Chart 객체 생성
   window.myChart = new Chart(ctx, {
+
     type: 'doughnut',
+
     data: {
       labels: jsonData.labels,
       datasets: [{
@@ -28,11 +30,14 @@ request.onload = function () {
         borderColor: 'white',
         borderWidth: 1
       }]
+
     },
+
     options: {
       responsive: false,
       maintainAspectRatio: false
     }
   });
 };
+
 request.send();
