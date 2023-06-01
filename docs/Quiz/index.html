@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    /* 스타일 정의 */
     table {
-      width: 100%;
+      width: 80%;
+      margin: 0 auto;
     }
 
     th,
@@ -31,6 +33,10 @@
     tr.dragging {
       background-color: yellow;
     }
+
+    #pagination {
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -52,12 +58,13 @@
   </div>
 
   <script>
+    /* 변수 선언 */
     let currentPage = 1;
     const itemsPerPage = 10;
+    let draggedRow = null; // 드래그중인 행
+    let prevIndex = null; // 이전 인덱스
 
-    let draggedRow = null;
-    let prevIndex = null;
-
+    /* 드래그 시작 이벤트 */
     function dragStart(event) {
       const target = event.target.closest('tr');
       if (target && target.classList.contains('selected')) {
@@ -71,6 +78,7 @@
       }
     }
 
+    /* 드래그 중 이벤트 */
     function dragOver(event) {
       event.preventDefault();
       event.dataTransfer.dropEffect = "move";
@@ -86,25 +94,26 @@
       }
     }
 
+    /* 드래그 종료 이벤트 */
     function dragEnd(event) {
       draggedRow.classList.remove('dragging');
       draggedRow = null;
       prevIndex = null;
     }
 
+    /* 이벤트 리스너 등록 */
     document.getElementById('forumTable').addEventListener('dragstart', dragStart);
     document.getElementById('forumTable').addEventListener('dragover', dragOver);
     document.getElementById('forumTable').addEventListener('dragend', dragEnd);
 
+    /* 데이터 가져오기 */
     fetch('forum.json')
       .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not OK');
-        }
+        if (!response.ok) { throw new Error('Network response was not OK'); }
         return response.json();
       })
       .then((data) => {
-        // 페이지네이션 버튼을 그립니다.
+        /* 페이지네이션 버튼 그리기 */
         for (let i = 1; i <= Math.ceil(data.length / itemsPerPage); i++) {
           const btn = document.createElement('button');
           btn.innerText = i;
@@ -115,7 +124,7 @@
           document.getElementById('pagination').appendChild(btn);
         }
 
-        // 전체 선택 체크박스 이벤트를 등록합니다.
+        /* 전체 선택 체크박스 이벤트 등록 */
         document.getElementById('selectAll').addEventListener('change', function () {
           const checkboxes = document.querySelectorAll('#tableBody input[type="checkbox"]');
           checkboxes.forEach(checkbox => {
@@ -124,29 +133,22 @@
           });
         });
 
+        /* 데이터 출력 */
         function displayData() {
           const tableBody = document.getElementById('tableBody');
-          // 기존 데이터를 삭제합니다.
-          tableBody.innerHTML = '';
-
-          // 현재 페이지의 데이터만 보여줍니다.
+          tableBody.innerHTML = ''; // 기존 데이터 삭제
           for (let i = (currentPage - 1) * itemsPerPage; i < currentPage * itemsPerPage; i++) {
             if (data[i]) {
               let row = tableBody.insertRow();
+              row.draggable = true; // 드래그 가능 설정
               let checkboxCell = row.insertCell(0);
               let checkbox = document.createElement('input');
               checkbox.type = 'checkbox';
               checkboxCell.appendChild(checkbox);
-
               checkbox.addEventListener('change', function () {
-                if (this.checked) {
-                  row.classList.add('selected');
-                } else {
-                  row.classList.remove('selected');
-                }
+                if (this.checked) { row.classList.add('selected'); }
+                else { row.classList.remove('selected'); }
               });
-
-              row.draggable = true;
               let idCell = row.insertCell(1);
               idCell.textContent = data[i].id;
               let titleCell = row.insertCell(2);
@@ -154,8 +156,7 @@
             }
           }
         }
-
-        // 첫 페이지를 보여줍니다.
+        /* 첫 페이지 출력 */
         displayData();
       })
       .catch((error) => {
