@@ -1,77 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        table {
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid black;
-        }
-        tr:nth-child(even) {
-            background-color: lightgray;
-        }
-        tr:nth-child(odd) {
-            background-color: white;
-        }
-        tr.selected {
-            background-color: lightgreen;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    tr:nth-child(even) {
+      background-color: lightgray;
+    }
+
+    tr:nth-child(odd) {
+      background-color: white;
+    }
+
+    tr.selected {
+      background-color: lightgreen;
+    }
+
+    tr.dragging {
+      background-color: yellow;
+    }
+  </style>
 </head>
+
 <body>
-    <table id="forumTable">
-        <thead>
-            <tr>
-                <th></th> <!-- 체크박스를 위한 빈 헤더 -->
-                <th>ID</th>
-                <th>Title</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-    </table>
+  <table id="forumTable">
+    <thead>
+      <tr>
+        <th><input type="checkbox" id="selectAll"></th> <!-- 전체 선택 체크박스 -->
+        <th>ID</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
 
-    <script>
-        fetch('forum.json')
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Network response was not OK');
-            }
-            return response.json();
-        })
-        .then((data) => {
-            // 'data' is now a generic JavaScript object
-            const tableBody = document.getElementById('tableBody');
+  <div id="pagination">
+    <!-- 페이지네이션 버튼들이 위치할 공간 -->
+  </div>
 
-            data.forEach(item => {
-                let row = tableBody.insertRow();
-                let checkboxCell = row.insertCell(0);
-                let checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkboxCell.appendChild(checkbox);
+  <script>
+    let currentPage = 1;
+    const itemsPerPage = 10;
 
-                checkbox.addEventListener('change', function() {
-                    if (this.checked) {
-                        row.classList.add('selected');
-                    } else {
-                        row.classList.remove('selected');
-                    }
-                });
+    let draggedRow = null;
+    let prevIndex = null;
 
-                let idCell = row.insertCell(1);
-                idCell.textContent = item.id;
-                let titleCell = row.insertCell(2);
-                titleCell.textContent = item.title;
-            });
-        })
-        .catch((error) => {
-            console.log('Error:', error);
+    function dragStart(event) {
+      const target = event.target.closest('tr');
+      if (target && target.classList.contains('selected')) {
+        draggedRow = target;
+        prevIndex = Array.from(draggedRow.parentNode.children).indexOf(draggedRow);
+        event.dataTransfer.effectAllowed = "move";
+        event.dataTransfer.setData("text/html", draggedRow.innerHTML);
+        draggedRow.classList.add('dragging');
+      } else {
+        event.preventDefault();
+      }
+    }
+
+    function dragOver(event) {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = "move";
+      const targetRow = event.target.closest('tr');
+      if (targetRow && targetRow !== draggedRow) {
+        const currentIndex = Array.from(targetRow.parentNode.children).indexOf(targetRow);
+        if (currentIndex > prevIndex) {
+          targetRow.parentNode.insertBefore(draggedRow, targetRow.nextSibling);
+        } else {
+          targetRow.parentNode.insertBefore(draggedRow, targetRow);
+        }
+        prevIndex = currentIndex;
+      }
+    }
+
+    function dragEnd(event) {
+      draggedRow.classList.remove('dragging');
+      draggedRow = null;
+      prevIndex = null;
+    }
+
+    document.getElementById('forumTable').addEventListener('dragstart', dragStart);
+    document.getElementById('forumTable').addEventListener('dragover', dragOver);
+    document.getElementById('forumTable').addEventListener('dragend', dragEnd);
+
+    fetch('forum.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not OK');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // 페이지네이션 버튼을 그립니다.
+        for (let i = 1; i <= Math.ceil(data.length / itemsPerPage); i++) {
+          const btn = document.createElement('button');
+          btn.innerText = i;
+          btn.addEventListener('click', function () {
+            currentPage = i;
+            displayData();
+          });
+          document.getElementById('pagination').appendChild(btn);
+        }
+
+        // 전체 선택 체크박스 이벤트를 등록합니다.
+        document.getElementById('selectAll').addEventListener('change', function () {
+          const checkboxes = document.querySelectorAll('#tableBody input[type="checkbox"]');
+          checkboxes.forEach(checkbox => {
+            checkbox.checked = this.checked;
+            checkbox.dispatchEvent(new Event('change'));
+          });
         });
-    </script>
+
+        function displayData() {
+          const tableBody = document.getElementById('tableBody');
+          // 기존 데이터를 삭제합니다.
+          tableBody.innerHTML = '';
+
+          // 현재 페이지의 데이터만 보여줍니다.
+          for (let i = (currentPage - 1) * itemsPerPage; i < currentPage * itemsPerPage; i++) {
+            if (data[i]) {
+              let row = tableBody.insertRow();
+              let checkboxCell = row.insertCell(0);
+              let checkbox = document.createElement('input');
+              checkbox.type = 'checkbox';
+              checkboxCell.appendChild(checkbox);
+
+              checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                  row.classList.add('selected');
+                } else {
+                  row.classList.remove('selected');
+                }
+              });
+
+              row.draggable = true;
+              let idCell = row.insertCell(1);
+              idCell.textContent = data[i].id;
+              let titleCell = row.insertCell(2);
+              titleCell.textContent = data[i].title;
+            }
+          }
+        }
+
+        // 첫 페이지를 보여줍니다.
+        displayData();
+      })
+      .catch((error) => {
+        console.log('Error:', error);
+      });
+  </script>
 </body>
+
 </html>
