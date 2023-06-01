@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+        }
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+        tr.selected {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <table id="forumTable">
+        <thead>
+            <tr>
+                <th></th> <!-- 체크박스를 위한 빈 헤더 -->
+                <th>ID</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+
+    <script>
+        fetch('forum.json')
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not OK');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            // 'data' is now a generic JavaScript object
+            const tableBody = document.getElementById('tableBody');
+
+            data.forEach(item => {
+                let row = tableBody.insertRow();
+                let checkboxCell = row.insertCell(0);
+                let checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkboxCell.appendChild(checkbox);
+
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        row.classList.add('selected');
+                    } else {
+                        row.classList.remove('selected');
+                    }
+                });
+
+                let idCell = row.insertCell(1);
+                idCell.textContent = item.id;
+                let titleCell = row.insertCell(2);
+                titleCell.textContent = item.title;
+            });
+        })
+        .catch((error) => {
+            console.log('Error:', error);
+        });
+    </script>
+</body>
+</html>
